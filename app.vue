@@ -24,9 +24,7 @@
               <SidebarRightParent/>
             </div>
           </div>
-
-
-
+          
         </div>
       </div>
     </div>
