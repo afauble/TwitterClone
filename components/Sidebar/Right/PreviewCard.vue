@@ -7,7 +7,7 @@
 
         <slot></slot>
 
-        <div class="p-3 test-sm text-blue-400 curser-pointer rounded-b-2xl hover:bg-gray-200 dark:hover:bg-dim-300" :class="defaultTransition">
+        <div class="p-3 text-sm text-blue-400 curser-pointer rounded-b-2xl hover:bg-gray-200 dark:hover:bg-dim-300" :class="defaultTransition">
             Show more
         </div>
 

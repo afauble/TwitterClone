@@ -14,12 +14,12 @@
           </div>
 
           <!-- Main content -->
-          <!-- <main class="col-span-12 md:col-span-8 xl:col-span-6 bg-red-500">
+          <main class="col-span-12 md:col-span-8 xl:col-span-6 bg-red-500">
             <h1>Header</h1>
-          </main> -->
+          </main>
 
           <!-- Right sidebar -->
-          <div class="col-span-12 md:block xl:col-span-4 md:col-span-3 bg-blue-500">
+          <div class="hidden col-span-12 md:block xl:col-span-4 md:col-span-3">
             <div class="sticky top-0">
               <SidebarRightParent/>
             </div>
