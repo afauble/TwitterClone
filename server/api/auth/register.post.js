@@ -1,5 +1,6 @@
 import { sendError } from "h3"
 import { createUser } from "../../db/users"
+import { userTransformer } from "~~/server/transformers/user"
 
 export default defineEventHandler(async (event) => {
     const body = await readBody(event) 
@@ -24,6 +25,6 @@ export default defineEventHandler(async (event) => {
     const user = await createUser(userData)
 
     return {
-        body: user
+        body: userTransformer(user)
     }
 })

@@ -1,4 +1,4 @@
-import { prisma } from ".";
+import { prisma } from "."
 import bcrypt from "bcrypt"
 
 export const createUser = (userData) => {
@@ -10,5 +10,14 @@ export const createUser = (userData) => {
     
     return prisma.user.create({
         data: finalUserData
+    })
+}
+
+
+export const getUserByUsername = (username) => {
+    return prisma.user.findUnique({
+        where: {
+            username
+        }
     })
 }
