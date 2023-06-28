@@ -33,7 +33,11 @@ module.exports = {
     },
   },
   
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms')
+  ],
+
+
   "tailwindCSS.emmetCompletions": true,
   "editor.inlineSuggest.enabled": true,
   "editor.quickSuggestions": {
