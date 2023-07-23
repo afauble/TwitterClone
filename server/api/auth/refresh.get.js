@@ -30,13 +30,11 @@ export default defineEventHandler(async (event) => {
         
         const {accessToken} = generateTokens(user)
 
-        return {
-            access_token: accessToken
-        }
+        return {access_token: accessToken}
     } catch (error) {
         return sendError(event, createError({
             statusCode: 500,
-            statusMessage: 'Failed to create Acces Token'
+            statusMessage: 'Failed to create Access Token'
         }))
     }
 })
