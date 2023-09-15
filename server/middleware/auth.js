@@ -1,6 +1,7 @@
 import { getUserById } from "../db/users"
 import { decodeAccessToken } from "../utils/jwt"
 import UrlPattern from "url-pattern"
+import { sendError } from "h3"
 
 export default defineEventHandler(async (event) => {
     const endpoints = ['/api/auth/user']
@@ -22,7 +23,7 @@ export default defineEventHandler(async (event) => {
     if(!decode) {
         return sendError(event, createError({
             statusCode: 401,
-            statusMessage: 'Unauthorized'
+            statusMessage: 'Unauthorized decode'
         }))
     }
 
