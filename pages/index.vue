@@ -10,5 +10,5 @@
 <script setup>
     const loading = ref(false)
     const { useAuthUser } = useAuth()
-    const user = useAuthUser
+    const user = useAuthUser()
 </script>

@@ -26,7 +26,6 @@
     async function handleLogin() {
         const {login} = useAuth()
         data.loading = true
-        console.log(data)
         try {
             await login({
                 username: data.username,

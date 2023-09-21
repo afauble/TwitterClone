@@ -30,6 +30,7 @@ export default () => {
 
                 resolve(true)
             } catch(error) {
+                console.log(error)
                 reject(error)
             }
         })
@@ -56,6 +57,7 @@ export default () => {
                 setUser(data.user)
                 resolve(true)
             } catch (error) {
+                console.log(error)
                 reject(error)
             }
         })

@@ -22,6 +22,7 @@ export const decodeRefreshToken = (token) => {
     try {
         return jwt.verify(token, config.jwtRefreshSecret)
     } catch (error) {
+        console.log(error)
         return null   
     }
 }
@@ -29,11 +30,8 @@ export const decodeRefreshToken = (token) => {
 export const decodeAccessToken = (token) => {
     const config = useRuntimeConfig()
     try {
-        console.log('*** Token ***')
-        console.log(token)
         return jwt.verify(token, config.jwtAccessSecret)
     } catch (error) {
-        // TODO CURRENT ERROR
         console.log(error)
         return null   
     }
