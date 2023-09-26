@@ -4,7 +4,10 @@ import UrlPattern from "url-pattern"
 import { sendError } from "h3"
 
 export default defineEventHandler(async (event) => {
-    const endpoints = ['/api/auth/user']
+    const endpoints = [
+        '/api/auth/user',
+        '/api/user/tweets'
+    ]
 
     const isHandledByThisMiddleware = endpoints.some(endpoint => {
         const pattern = new UrlPattern(endpoint)
@@ -23,7 +26,7 @@ export default defineEventHandler(async (event) => {
     if(!decode) {
         return sendError(event, createError({
             statusCode: 401,
-            statusMessage: 'Unauthorized decode'
+            statusMessage: 'Unauthorized'
         }))
     }
 
