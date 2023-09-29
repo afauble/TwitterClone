@@ -22,6 +22,7 @@ export const decodeRefreshToken = (token) => {
     try {
         return jwt.verify(token, config.jwtRefreshSecret)
     } catch (error) {
+        console.log('Error decoding refresh token');
         console.log(error)
         return null   
     }
@@ -32,6 +33,7 @@ export const decodeAccessToken = (token) => {
     try {
         return jwt.verify(token, config.jwtAccessSecret)
     } catch (error) {
+        console.log('Error decoding access token');
         console.log(error)
         return null   
     }
