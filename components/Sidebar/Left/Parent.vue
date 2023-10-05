@@ -10,6 +10,7 @@
             </nuxt-link>
         </div>
         
+        <!-- Tabs -->
         <div class="mt-2 space-y-3">
             <SidebarLeftTab active>
                 <template v-slot:icon>
@@ -84,6 +85,7 @@
             </SidebarLeftTab>
         </div>
 
+        <!-- Profile & Logout -->
         <div class="flex flex-row items-center justify-center px-2 py-2 mx-auto mb-5 rounded-full cursor-pointer w-14 xl:w-full hover:bg-gray-100 dark:hover:bg-slate-800" :class="defaultTransition" @click="emits('onLogout')">
 
             <div class="flex flex-row">
@@ -98,7 +100,6 @@
                 </div>
             </div>
 
-            <!--ICON-->
             <div class="hidden ml-auto xl:block">
                 <div class="w-6 h-6">
                     <ChevronDownIcon />
@@ -106,12 +107,25 @@
             </div>
 
         </div>
+
+        <!-- Tweet btn -->
+        <div class="hidden xl:block">
+            <UIButton liquid size="lg" class="font-bold">Tweet</UIButton>
+        </div>
+        <!-- Tweet btn -->
+        <div class="block xl:hidden">
+            <UIButton>
+                <div class="w-6 h-6">
+                    <PencilIcon/>
+                </div>
+            </UIButton>
+        </div>
     </div>
 </template>
 
 <script setup>
     import { HomeIcon } from "@heroicons/vue/solid"
-    import { HashtagIcon, BellIcon, InboxIcon, BookmarkIcon, DocumentTextIcon, UserIcon, DotsCircleHorizontalIcon, ChevronDownIcon } from "@heroicons/vue/outline"
+    import { HashtagIcon, BellIcon, InboxIcon, BookmarkIcon, DocumentTextIcon, UserIcon, DotsCircleHorizontalIcon, ChevronDownIcon, PencilIcon } from "@heroicons/vue/outline"
     const { defaultTransition } = useTailwindConfig()
     const emits = defineEmits(['onTweet', 'onLogout'])
     const props = defineProps({
