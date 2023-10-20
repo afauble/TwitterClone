@@ -10,7 +10,7 @@
                 <TweetForm :user="user"/>
             </div>
 
-            <TweetListFeed  :tweets="homeTweets"/>
+            <TweetListFeed :tweets="homeTweets"/>
             
         </MainSection>
     </div>

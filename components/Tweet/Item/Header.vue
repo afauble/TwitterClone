@@ -13,6 +13,17 @@
                 </nuxt-link>
                 . {{ props.tweet.postedAtHuman }}
             </span>
+
+            <p v-if="props.tweet.replyTo">
+                <div class="text-gray-500">
+                    Replying to
+                </div>
+
+                <nuxt-link :to="replyToUrl" class="text-blue-400">
+                    {{ props.tweet.replyTo.author.handleName }}
+                </nuxt-link>
+
+            </p>
             
         </div>
 
@@ -30,4 +41,5 @@
     })
 
     const author = props.tweet.author
+    const replyToUrl = computed(() => `/status/${props.tweet?.replyTo?.id}`)
 </script>

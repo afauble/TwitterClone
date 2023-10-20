@@ -1,9 +1,9 @@
 import { tweetTransformer } from "~/server/transformers/tweet"
 import { getTweets } from "~/server/db/tweet"
 
-export default defineEventHandler(async() => {
+export default defineEventHandler(async(event) => {
 
-    const tweets = await getTweets({
+    let primsaQuery = {
         include: {
             author: true,
             mediaFile: true,
@@ -23,7 +23,10 @@ export default defineEventHandler(async() => {
                 createdAt: 'desc'
             }
         ]
-    })
+    }
+
+    const tweets = await getTweets(primsaQuery)
+
 
     return {
         tweets: tweets.map(tweetTransformer)
